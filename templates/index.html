@@ -1,7 +1,16 @@
 {% include "header.html" %}
     </head>
     </body>
-        <h2>Ethan Graf</h2>
+        <div class='container'>
+            <div id='profile-box'>
+                <h2>Hello, World!</h2>
+                <img id='profile-img' src="{{ url_for('static', filename='profile.jpg') }}"/>
+                <h1>Ethan Graf</h1>
+                <button type="button" class="btn btn-outline-primary">Enter</button>
+            </div>
+        </div>
+
+
 
 {% include "footer.html" %}
 
