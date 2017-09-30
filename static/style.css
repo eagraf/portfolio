@@ -9,8 +9,14 @@ html, body {
     height: 100%;
 }
 
+#profile-content {
+    background-color: transparent;
+    border: 0px;
+}
+
 #profile-box {
     text-align: center;
+    color: white;
 }
 
 #profile-img {
@@ -19,5 +25,10 @@ html, body {
     border-radius: 100px;
     border: 4px;
     border-style: solid;
-    border-color: black;
+    border-color: #444444;
+}
+
+#profile-btn {
+    color: white;
+    border-color: white;
 }
