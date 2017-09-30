@@ -32,3 +32,8 @@ html, body {
     color: white;
     border-color: white;
 }
+
+#map {
+    width: 100%;
+    height: 100%;
+}
