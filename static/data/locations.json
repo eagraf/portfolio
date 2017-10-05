@@ -1,5 +1,6 @@
 [
     {
+        "id": "bedford",
         "location": "Bedford, MA",
         "title": "Bedford",
         "geo": {
@@ -8,6 +9,7 @@
         }
     },
     {
+        "id": "rpi",
         "location": "Troy, NY",
         "title": "Rensselaer Polytechnic Institute",
         "geo": {

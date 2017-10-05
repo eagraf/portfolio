@@ -23,6 +23,10 @@ function initMap() {
                 map: map,
                 title: data[i].title
             });
+            marker.addListener('click', () => {
+                $('#drawer-content').load('/locations/' + data[i].id);
+                openDrawer();
+            });
         }
     });
 }
