@@ -71,3 +71,14 @@ html, body {
     z-index: 100;
     width: 100%;
 }
+
+#drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    right: 0;
+    background-color: white;
+    transition: 0.5s;
+}

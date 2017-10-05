@@ -9,5 +9,13 @@ function initMap() {
         center: bedford
     });
 }
+
+function openDrawer() {
+    document.getElementById('drawer').style.width = '30%';
+}
+
+function closeDrawer() {
+    document.getElementById('drawer').style.width = '0';
+}
     
 
