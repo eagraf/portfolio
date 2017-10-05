@@ -1,6 +1,6 @@
 {% include "header.html" %}
     </head>
-    </body>
+    <body>
         <div class='modal fade' id='profile-modal'>
             <div class='modal-dialog' role='content'>
                 <div class='modal-content' id='profile-content'>
@@ -15,11 +15,15 @@
         </div>
         <div id='map-wrapper'>
             {% include "navbar.html" %}
-            <div id='drawer'></div>
+            <div id='drawer'>
+                <h3 id='#drawer-title'></h3>
+            </div>
             <div id='map'></div>
         </div>
-
-{% include "footer.html" %}
-
+        
+        {% include "includes.html" %}
+        <script src="{{ url_for('static', filename='locations.js') }}"></script>
+    </body>
+</html>
         
         

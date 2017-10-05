@@ -1,0 +1,18 @@
+[
+    {
+        "location": "Bedford, MA",
+        "title": "Bedford",
+        "geo": {
+            "lat": 42.490556,
+            "lng": -71.276667
+        }
+    },
+    {
+        "location": "Troy, NY",
+        "title": "Rensselaer Polytechnic Institute",
+        "geo": {
+            "lat": 42.7329163,
+            "lng": -73.67128
+        }
+    }
+]
