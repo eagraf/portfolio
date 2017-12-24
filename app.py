@@ -8,6 +8,10 @@ SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 def home():
     return render_template('index.html')
 
+@app.route('/about')
+def about():
+    return 'About'
+
 @app.route('/blog')
 def blog():
     return 'Blog'

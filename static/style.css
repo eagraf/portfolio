@@ -75,7 +75,8 @@ html, body {
 #drawer {
     height: 100%;
     width: 0;
-    padding-top: 64px;
+    padding-top: 72px;
+    padding-bottom: 32px;
     position: fixed;
     z-index: 50;
     top: 0;
@@ -83,3 +84,10 @@ html, body {
     background-color: white;
     transition: 0.5s;
 }
+
+#drawer-footer {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 16px;
+}
+

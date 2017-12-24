@@ -31,12 +31,20 @@ function initMap() {
     });
 }
 
+// Open the right side nav drawer.
 function openDrawer() {
-    document.getElementById('drawer').style.width = '30%';
+    const drawer = document.getElementById('drawer');
+    drawer.style.width = '30%';
+    drawer.style.paddingLeft = '32px';
+    drawer.style.paddingRight = '32px';
 }
 
+// Close the right side nav drawer.
 function closeDrawer() {
-    document.getElementById('drawer').style.width = '0';
+    const drawer = document.getElementById('drawer');
+    drawer.style.width = '0%';
+    drawer.style.paddingLeft = '0px';
+    drawer.style.paddingRight = '0px';
 }
     
 
