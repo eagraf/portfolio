@@ -1,11 +1,19 @@
+// Global state
+var map;
+var geoLoaded = false;
+var geoData;
+var currentLocation = 0;
+
+// On load show introduction modal slide.
 $(window).on('load', () => {
     $('#profile-modal').modal('show');
 });
 
+// Initialize the map.
 function initMap() {
     const bedford = { lat: 42.490556, lng: -71.276667 };
     // Instantiate a new map.
-    let map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         zoom: 8,
         center: bedford
     });
@@ -16,6 +24,9 @@ function initMap() {
     }).done((data) => {
         console.log("Test");
         console.log(data);
+        // Update global state.
+        geoData = data;
+        geoLoaded = true;
         // Create a marker for each location.
         for (let i = 0; i < data.length; i++) {
             var marker = new google.maps.Marker({
@@ -25,6 +36,7 @@ function initMap() {
             });
             marker.addListener('click', () => {
                 $('#drawer-content').load('/locations/' + data[i].id);
+                currentLocation = 1;
                 openDrawer();
             });
         }
@@ -32,8 +44,9 @@ function initMap() {
 }
 
 // Open the right side nav drawer.
-function openDrawer() {
+function openDrawer(currentLocation = 0) {
     const drawer = document.getElementById('drawer');
+    $('#drawer-content').load('/locations/' + geoData[currentLocation].id);
     drawer.style.width = '30%';
     drawer.style.paddingLeft = '32px';
     drawer.style.paddingRight = '32px';
@@ -47,4 +60,10 @@ function closeDrawer() {
     drawer.style.paddingRight = '0px';
 }
     
+// Move to the next location
+function next() {
+    currentLocation++;
+    $('#drawer-content').load('/locations/' + geoData[currentLocation].id);
+    map.panTo(geoData[currentLocation].geo);
+}
 

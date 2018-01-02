@@ -8,7 +8,7 @@
                         <h2>Hello, World!</h2>
                         <img id='profile-img' src="{{ url_for('static', filename='profile.jpg') }}"/>
                         <h1>Ethan Graf</h1>
-                        <button type="button" data-dismiss='modal' id='profile-btn' class='btn btn-outline-primary'>Enter</button>
+                        <button type="button" data-dismiss='modal' id='profile-btn' class='btn btn-outline-primary' onclick='openDrawer()'>Enter</button>
                     </div>
                 </div>
             </div>
@@ -18,7 +18,7 @@
             <div id='drawer'>
                 <div id='drawer-content'></div>
                 <div id='drawer-footer'>
-                  <button type='button' id='next-location-btn' class='btn btn-outline-primary'>Next</button>
+                    <button type='button' id='next-location-btn' class='btn btn-outline-primary' onClick='next()'>Next</button>
                 </div>
             </div>
             <div id='map'></div>
