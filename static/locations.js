@@ -36,7 +36,7 @@ function initMap() {
             });
             marker.addListener('click', () => {
                 $('#drawer-content').load('/locations/' + data[i].id);
-                currentLocation = 1;
+                currentLocation = i;
                 openDrawer();
             });
         }
@@ -47,6 +47,7 @@ function initMap() {
 function openDrawer(currentLocation = 0) {
     const drawer = document.getElementById('drawer');
     $('#drawer-content').load('/locations/' + geoData[currentLocation].id);
+    updateLocation();
     drawer.style.width = '30%';
     drawer.style.paddingLeft = '32px';
     drawer.style.paddingRight = '32px';
@@ -59,11 +60,31 @@ function closeDrawer() {
     drawer.style.paddingLeft = '0px';
     drawer.style.paddingRight = '0px';
 }
-    
-// Move to the next location
-function next() {
-    currentLocation++;
+
+// Called whenever the location is changed.
+function updateLocation() {
+    if (currentLocation === 0) {
+        document.getElementById('prev-location-btn').setAttribute('disabled', 'disabled');
+    } else {
+        document.getElementById('prev-location-btn').removeAttribute('disabled');
+    }
+    if (currentLocation === geoData.length - 1) { 
+        document.getElementById('next-location-btn').setAttribute('disabled', 'disabled');
+    } else {
+        document.getElementById('next-location-btn').removeAttribute('disabled');
+    }
     $('#drawer-content').load('/locations/' + geoData[currentLocation].id);
     map.panTo(geoData[currentLocation].geo);
 }
+    
+// Move to the next location.
+function next() {
+    currentLocation++;
+    updateLocation();
+}
 
+// Move back to the previous location.
+function prev() {
+    currentLocation--;
+    updateLocation();
+}
