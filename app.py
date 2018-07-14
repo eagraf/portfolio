@@ -8,21 +8,17 @@ SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 def home():
     return render_template('index.html')
 
-@app.route('/about')
-def about():
-    return 'About'
-
 @app.route('/blog')
 def blog():
-    return 'Blog'
+    return render_template('blog.html')
 
 @app.route('/portfolio')
 def portfolio():
-    return 'Portfolio'
+    return render_template('portfolio.html')
 
 @app.route('/contact')
 def contact():
-    return 'Contact'
+    return render_template('contact.html')
 
 @app.route('/locations')
 def locations():
