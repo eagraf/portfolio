@@ -91,35 +91,6 @@ html, body {
   padding-bottom: 16px;
 }
 
-/*
- * ABOUT PAGE
- */
-
-#about {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 10%;
-}
-
-#role-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 10;
-}
-
-.role-card {
-    padding-left: 16px;
-    padding-right: 16px;
-    text-align: center;
-}
-
-.role-divider {
-    width: 1px;
-    background: lightgrey;
-}
-
 .timeline {
     padding-top: 64px;
     text-align: center;
