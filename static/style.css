@@ -83,6 +83,15 @@ html, body {
     right: 0;
     background-color: white;
     transition: 0.5s;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#drawer-content {
+    height: 100%;
+    overflow: scroll;
+    margin-bottom: 32px;
 }
 
 #drawer-footer {
