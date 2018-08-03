@@ -16,5 +16,14 @@
             "lat": 42.7329163,
             "lng": -73.67128
         }
+    },
+    {
+        "id": "qualcomm",
+        "location": "San Diego, CA",
+        "title": "Qualcomm",
+        "geo": {
+            "lat": 32.7157,
+            "lng": -117.1611
+        }
     }
 ]
