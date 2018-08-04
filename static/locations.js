@@ -2,11 +2,33 @@
 var map;
 var geoLoaded = false;
 var geoData;
-var currentLocation = 0;
 
 // On load show introduction modal slide.
 $(window).on('load', () => {
     $('#profile-modal').modal('show');
+});
+
+// Move the map based on scrolling.
+$(function () {
+    console.log("Hey");
+    currentHash = '#bedford';
+    $('#drawer-content').scroll(function () {
+        $('.location').each(function () {
+            var top = window.pageYOffset;
+            var distance = top - $(this).offset().top;
+            var hash = $(this).attr('id');
+            if (distance < 72 && distance > -72 && currentHash != hash) {
+                // ew
+                for (var i = 0; i < geoData.length; i++) {
+                    if (geoData[i].id == hash) {
+                        map.panTo(geoData[i].geo);
+                        currentHash = hash;
+                        break;
+                    }
+                }
+            }
+        });
+    });
 });
 
 // Initialize the map.
@@ -35,8 +57,8 @@ function initMap() {
                 title: data[i].title
             });
             marker.addListener('click', () => {
-                $('#drawer-content').load('/locations/' + data[i].id);
-                currentLocation = i;
+                window.location.href = "#" + data[i].id;
+                map.panTo(data[i].geo);
                 openDrawer();
             });
         }
@@ -46,8 +68,6 @@ function initMap() {
 // Open the right side nav drawer.
 function openDrawer(currentLocation = 0) {
     const drawer = document.getElementById('drawer');
-    //$('#drawer-content').load('/locations/' + geoData[currentLocation].id);
-    updateLocation();
     drawer.style.width = '30%';
     drawer.style.paddingLeft = '32px';
     drawer.style.paddingRight = '16px';
@@ -59,32 +79,4 @@ function closeDrawer() {
     drawer.style.width = '0%';
     drawer.style.paddingLeft = '0px';
     drawer.style.paddingRight = '0px';
-}
-
-// Called whenever the location is changed.
-function updateLocation() {
-    if (currentLocation === 0) {
-        document.getElementById('prev-location-btn').setAttribute('disabled', 'disabled');
-    } else {
-        document.getElementById('prev-location-btn').removeAttribute('disabled');
-    }
-    if (currentLocation === geoData.length - 1) { 
-        document.getElementById('next-location-btn').setAttribute('disabled', 'disabled');
-    } else {
-        document.getElementById('next-location-btn').removeAttribute('disabled');
-    }
-    //$('#drawer-content').load('/locations/' + geoData[currentLocation].id);
-    map.panTo(geoData[currentLocation].geo);
-}
-    
-// Move to the next location.
-function next() {
-    currentLocation++;
-    updateLocation();
-}
-
-// Move back to the previous location.
-function prev() {
-    currentLocation--;
-    updateLocation();
 }

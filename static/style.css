@@ -75,8 +75,7 @@ html, body {
 #drawer {
     height: 100%;
     width: 0;
-    padding-top: 72px;
-    padding-bottom: 32px;
+    padding-top: 56px;
     position: fixed;
     z-index: 50;
     top: 0;
@@ -89,21 +88,15 @@ html, body {
 }
 
 #drawer-content {
+    padding-right: 16px;
     height: 100%;
     overflow: scroll;
-    margin-bottom: 32px;
-    padding-right: 16px;
 }
 
 .location {
-    margin-bottom: 32px;
+    margin-top:16px;
+    margin-bottom: 16px;
     min-height: 100%;
-}
-
-#drawer-footer {
-    position: absolute;
-    bottom: 0;
-    padding-bottom: 16px;
 }
 
 .d-block, .w-100 {
