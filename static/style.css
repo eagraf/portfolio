@@ -92,6 +92,12 @@ html, body {
     height: 100%;
     overflow: scroll;
     margin-bottom: 32px;
+    padding-right: 16px;
+}
+
+.location {
+    margin-bottom: 32px;
+    min-height: 100%;
 }
 
 #drawer-footer {

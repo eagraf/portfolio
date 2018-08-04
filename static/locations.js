@@ -46,11 +46,11 @@ function initMap() {
 // Open the right side nav drawer.
 function openDrawer(currentLocation = 0) {
     const drawer = document.getElementById('drawer');
-    $('#drawer-content').load('/locations/' + geoData[currentLocation].id);
+    //$('#drawer-content').load('/locations/' + geoData[currentLocation].id);
     updateLocation();
     drawer.style.width = '30%';
     drawer.style.paddingLeft = '32px';
-    drawer.style.paddingRight = '32px';
+    drawer.style.paddingRight = '16px';
 }
 
 // Close the right side nav drawer.
@@ -73,7 +73,7 @@ function updateLocation() {
     } else {
         document.getElementById('next-location-btn').removeAttribute('disabled');
     }
-    $('#drawer-content').load('/locations/' + geoData[currentLocation].id);
+    //$('#drawer-content').load('/locations/' + geoData[currentLocation].id);
     map.panTo(geoData[currentLocation].geo);
 }
     

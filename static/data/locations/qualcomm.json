@@ -1,0 +1,13 @@
+{
+    "title": "Qualcomm",
+    "location": "San Diego, CA",
+    "text": [
+        "This summer I was an intern at Qualcomm, working on the Linux Security team. My job involved developing open source tools to fuzz the Linux kernel, in the hopes of discovering potential security issues.",
+        "During my weekends, I learned how to surf, and I spent as much time as possible enjoying the beautiful west coast weather."
+    ],
+    "images": [
+        "steve.jpg",
+        "pride.jpg",
+        "patent.jpg"
+    ]
+}

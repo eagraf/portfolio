@@ -1,0 +1,13 @@
+{
+    "title": "Bedford, MA",
+    "text": [
+        "I grew up in the small town of Bedford, Massachusetts, sandwiched between historic Lexington and Concord. There, I attended Bedford High School, graduating in the class of 2017.",
+        "My interests changed a lot as I grew up, but by my Junior year I decided for sure that I wanted to study computer science. In my senior year, I worked as a course assistant for Harvard's CS50 course, and as a web developer for a startup in Cambridge.",
+        "The summer after graduating high school, I worked as a DevOps intern at 18moons, a startup company building a childhood media platform."
+    ],
+    "images": [
+        "bedford.jpg",
+        "graduation.jpg",
+        "boston.jpg"
+    ]
+}

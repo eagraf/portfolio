@@ -6,7 +6,17 @@ SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    json_url = os.path.join(SITE_ROOT, 'static/data', 'locations.json')
+    locations = []
+    data = json.load(open(json_url))
+    for location in data:
+        url = os.path.join(SITE_ROOT, 'static/data/locations', location['id'] + ".json")
+        loc = json.load(open(url))
+        loc['id'] = location['id']
+        locations.append(loc)
+
+    print(locations)
+    return render_template('index.html', locations=locations)
 
 @app.route('/blog')
 def blog():
