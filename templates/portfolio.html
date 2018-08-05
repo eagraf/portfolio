@@ -1,86 +1,20 @@
 {% include "header.html" %}
   </head>
   <body>
-    {% include "navbar.html" %}
-    <section class="timeline">
-      <ul>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <li>
-          <div>
-            <time>1934</time>
-            Some content here
-          </div>
-        </li>
-        <!-- more list items here -->
-      </ul>
-    </section>
-    {% include "includes.html" %}
-    <script src="{{ url_for('static', filename='timeline.js') }}"></script>
-  </body>
+      {% include "navbar.html" %}
+      <section class="timeline">
+          <ul>
+              {% for project in portfolio %}
+              <li>
+                  <div>
+                      <h5>{{ project.title }}</h5>
+                      <p>{{ project.text }}</p>
+                  </div>
+              </li>
+              {% endfor %}
+          </ul>
+      </section>
+      {% include "includes.html" %}
+      <script src="{{ url_for('static', filename='timeline.js') }}"></script>
+    </body>
 </html>

@@ -24,7 +24,10 @@ def blog():
 
 @app.route('/portfolio')
 def portfolio():
-    return render_template('portfolio.html')
+    json_url = os.path.join(SITE_ROOT, 'static/data', 'portfolio.json')
+    data = json.load(open(json_url))
+
+    return render_template('portfolio.html', portfolio=data)
 
 @app.route('/contact')
 def contact():
