@@ -1,4 +1,4 @@
-import os
+import os, mistune
 from flask import Flask, render_template, request, json, jsonify, send_from_directory
 app = Flask(__name__)
 
@@ -10,7 +10,7 @@ def home():
     locations = []
     data = json.load(open(json_url))
     for location in data:
-        url = os.path.join(SITE_ROOT, 'static/data/locations', location['id'] + ".json")
+        url = os.path.join(SITE_ROOT, 'static/data/locations', location['id'] + '.json')
         loc = json.load(open(url))
         loc['id'] = location['id']
         locations.append(loc)
@@ -20,7 +20,19 @@ def home():
 
 @app.route('/blog')
 def blog():
-    return render_template('blog.html')
+    json_url = os.path.join(SITE_ROOT, 'static/data', 'blogs.json')
+    blogs = json.load(open(json_url))
+
+    markdown = mistune.Markdown()
+    for blog in blogs:
+        blog_url = os.path.join(SITE_ROOT, 'static/data/blogs', blog['id'] + '.md')
+
+        with open(blog_url, 'r') as myfile:
+            md=myfile.read()
+
+        blog['body'] = markdown(md)
+
+    return render_template('blog.html', blogs=blogs)
 
 @app.route('/portfolio')
 def portfolio():

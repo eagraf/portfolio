@@ -1,7 +1,20 @@
 {% include "header.html" %}
-    </head>
-    <body>
-        {% include "navbar.html" %}
-        {% include "includes.html" %}
+  </head>
+  <body>
+      {% include "navbar.html" %}
+      <div id="blogs" class="container">
+          {% for blog in blogs %}
+              <div class="blog" id="{{ blog.id }}">
+                  <h2 class="blog-title">{{ blog.title }}</h2>
+                  <p>{{ blog.date }}</p>
+                  <hr></hr>
+                  <div class="blog-body">
+                      {{ blog.body|safe }}
+                  </div>
+              </div>
+          {% endfor %}
+      </div>
+      {% include "includes.html" %}
+      <script src="{{ url_for('static', filename='timeline.js') }}"></script>
     </body>
 </html>

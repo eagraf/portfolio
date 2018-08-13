@@ -297,3 +297,28 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+#blogs {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 128px;
+}
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 80%;
+}
+
+.blog-title {
+   text-align: center;
+}
+
+.blog hr {
+    height: 1px;
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,1);
+    margin-top: 0px;
+}
