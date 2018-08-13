@@ -1,3 +1,4 @@
+
 function isElementInViewport(el) {
   var rect = el.getBoundingClientRect();
   return (
@@ -22,3 +23,14 @@ function callbackFunc() {
 
 window.addEventListener("load", callbackFunc);
 window.addEventListener("scroll", callbackFunc);
+
+var order = document.getElementById("order");
+order.addEventListener("change", function() {
+    var list = document.getElementById("project-list");
+    var i = list.childNodes.length;
+    while(i--) {
+        list.appendChild(list.childNodes[i]);
+    }
+    callbackFunc();
+});
+

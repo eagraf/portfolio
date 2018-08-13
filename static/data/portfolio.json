@@ -1,14 +1,37 @@
 [
     {
-        "title": "TEST",
-        "text": "This is my best project ever. XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        "title": "Linux Security",
+        "date": "May-August 2018",
+        "text": "During my internship at Qualcomm, I worked on SyzKaller, an open source kernel fuzzer used to discover bugs and potential security exploits."
     },
     {
-        "title": "TEST",
-        "text": "This is my best project ever. XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        "title": "CCHacks",
+        "date": "April 2018",
+        "text": "Organized coding&&community's first hackathon for high school students in Troy, New York. Over 20 students attended, working over the course of a day to build projects including websites, circuits with Arduinos and video games."
     },
     {
-        "title": "TEST",
-        "text": "This is my best project ever. XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        "title": "Rensselaer Union Voting System",
+        "date": "Spring 2017 - Present",
+        "text": "The Rensselaer Union develops its own voting software for student government elections. I work on maintaining and improving security and integrity for the system."
+    },
+    {
+        "title": "Club Management System",
+        "date": "Fall 2017 - Present",
+        "text": "The Rensselaer Union develops its own software for managing clubs, serving the entire RPI student body. The software allows for student government, club officers, and union administration to manage club membership, budgets and inventories."
+    },
+    {
+        "title": "New York State STEP",
+        "date": "Fall 2017",
+        "text": "I participate in coding&&community, a club at RPI that works with New York State's Science and Technology Entry Program to provide free coding lessons to disadvantaged local students."
+    },
+    {
+        "title": "18moons DevOps Internship",
+        "date": "Summer 2017",
+        "text": "Migrated a large Content Management System from legacy servers, and deployed a new streamlined system on Amazon Web Services."
+    },
+    {
+        "title": "Scrapbook",
+        "date": "Spring 2017",
+        "text": "I designed and built an experimental app that merged elements of social media and conventional messaging apps."
     }
 ]

@@ -2,18 +2,31 @@
   </head>
   <body>
       {% include "navbar.html" %}
-      <section class="timeline">
-          <ul>
-              {% for project in portfolio %}
-              <li>
-                  <div>
-                      <h5>{{ project.title }}</h5>
-                      <p>{{ project.text }}</p>
-                  </div>
-              </li>
-              {% endfor %}
-          </ul>
-      </section>
+      <div id="timeline-wrapper">
+          <div id="timeline-header">
+              <p>Most Recent</p>
+              <label class="switch">
+                  <input id="order" type="checkbox" checked>
+                  <span class="slider round"></span>
+              </label>
+          </div>
+          <section class="timeline">
+              <div class="timeline-header">
+              </div>
+              <ul id="project-list">
+                  {% for project in portfolio %}
+                  <li>
+                      <div>
+                          <h4>{{ project.title }}</h4>
+                          <h6>{{ project.date }}</h6>
+                          <hr style="background: white"></hr>
+                          <p>{{ project.text }}</p>
+                      </div>
+                  </li>
+                  {% endfor %}
+              </ul>
+          </section>
+      </div>
       {% include "includes.html" %}
       <script src="{{ url_for('static', filename='timeline.js') }}"></script>
     </body>
