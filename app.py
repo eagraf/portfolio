@@ -29,10 +29,6 @@ def portfolio():
 
     return render_template('portfolio.html', portfolio=data)
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-
 @app.route('/locations')
 def locations():
     if request.method == 'GET':

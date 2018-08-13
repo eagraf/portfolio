@@ -54,6 +54,11 @@ html, body {
     color: white !important;
 }
 
+a i {
+  color: white;
+  padding-right: 24px;
+}
+
 #map-wrapper {
     position: relative;
     width: 100%;
