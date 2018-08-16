@@ -309,7 +309,7 @@ input:checked + .slider:before {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 80%;
+    width: 60%;
 }
 
 .blog-title {
@@ -321,4 +321,17 @@ input:checked + .slider:before {
     width: 100%;
     border-top: 1px solid rgba(0,0,0,1);
     margin-top: 0px;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 4px solid #ccc;
+    margin: 1.5em 0px;
+    padding: 0.5em 10px;
+    font-family: "Playfair Display";
+    font-size: 16px;
+}
+
+blockquote p {
+    display: inline;
 }
