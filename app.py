@@ -3,10 +3,6 @@ from flask import Flask, render_template, request, json, jsonify, send_from_dire
 app = Flask(__name__)
 app.config.from_envvar('APPLICATION_SETTINGS')
 
-print(app.config)
-
-SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-
 @app.route('/')
 def home():
     json_url = os.path.join(app.config['DATA_PATH'], 'locations.json')
