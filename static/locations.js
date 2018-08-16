@@ -10,7 +10,6 @@ $(window).on('load', () => {
 
 // Move the map based on scrolling.
 $(function () {
-    console.log("Hey");
     currentHash = '#bedford';
     $('#drawer-content').scroll(function () {
         $('.location').each(function () {
@@ -44,8 +43,6 @@ function initMap() {
         url: '/locations',
         dataType: 'json'
     }).done((data) => {
-        console.log("Test");
-        console.log(data);
         // Update global state.
         geoData = data;
         geoLoaded = true;
