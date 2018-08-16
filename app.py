@@ -28,7 +28,7 @@ def blog():
         blog_url = os.path.join(SITE_ROOT, 'static/data/blogs', blog['id'] + '.md')
 
         with open(blog_url, 'r') as myfile:
-            md=myfile.read()
+            md=myfile.read().decode('utf-8')
 
         blog['body'] = markdown(md)
 
