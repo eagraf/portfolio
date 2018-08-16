@@ -13,8 +13,9 @@ $(function () {
     currentHash = '#bedford';
     $('#drawer-content').scroll(function () {
         $('.location').each(function () {
-            var top = window.pageYOffset;
+            var top = $('#drawer').position().top;
             var distance = top - $(this).offset().top;
+            console.log(top);
             var hash = $(this).attr('id');
             if (distance < 72 && distance > -72 && currentHash != hash) {
                 // ew
@@ -64,10 +65,22 @@ function initMap() {
 
 // Open the right side nav drawer.
 function openDrawer(currentLocation = 0) {
+    console.log(screen.width);
     const drawer = document.getElementById('drawer');
-    drawer.style.width = '30%';
-    drawer.style.paddingLeft = '32px';
-    drawer.style.paddingRight = '16px';
+    if (screen.width < 600) {
+        drawer.style.height = '45%';
+        drawer.style.width = '100%';
+        drawer.style.paddingLeft = '16px';
+        drawer.style.paddingRight = '16px';
+    } else if (screen.width < 1000) {
+        drawer.style.width = '45%';
+        drawer.style.paddingLeft = '32px';
+        drawer.style.paddingRight = '16px';
+    } else {
+        drawer.style.width = '30%';
+        drawer.style.paddingLeft = '32px';
+        drawer.style.paddingRight = '16px';
+    }
 }
 
 // Close the right side nav drawer.

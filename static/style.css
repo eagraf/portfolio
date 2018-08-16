@@ -78,13 +78,8 @@ a i {
 }
 
 #drawer {
-    height: 100%;
-    width: 0;
-    padding-top: 56px;
     position: fixed;
     z-index: 50;
-    top: 0;
-    right: 0;
     background-color: white;
     transition: 0.5s;
 
@@ -100,7 +95,10 @@ a i {
 
 .location {
     margin-top:16px;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
+}
+
+.location:last-child {
     min-height: 100%;
 }
 
@@ -109,6 +107,28 @@ a i {
     height: 256px;
     object-fit: cover;
 }
+
+/* Mobile friendly */
+@media screen and (max-width: 600px) {
+    #drawer {
+        height: 0;
+        width: 100%;
+        bottom: 0px;
+    }
+    .location:first-child {
+        margin-top: 32px;
+    }
+}
+@media screen and (min-width: 600px) {
+    #drawer {
+        height: 100%;
+        width: 0;
+        padding-top: 56px;
+        top: 0;
+        right: 0;
+    }
+}
+
 
 #timeline-wrapper {
     padding-top: 128px;
@@ -298,6 +318,43 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+@media screen and (max-width: 600px) {
+    #timeline-wrapper {
+        align-items: flex-start;
+    }
+    .timeline {
+        padding-left: 80px;
+    }
+    .timeline ul li div {
+        width: 60vw;
+    }
+    .timeline ul li:nth-child(even) div {
+        left: 45px;
+    }
+    .timeline ul li:nth-child(even) div::before {
+        left: -15px;
+        bottom: 0px;
+        border-width: 16px 16px 0px 0px;
+        border-color: transparent #F45B69 transparent transparent;
+    }
+    .timeline ul li:nth-child(even) div {
+        transform: translate3d(200px,0,0);
+    }
+    .timeline ul li.in-view div {
+        transform: none;
+        visibility: visible;
+        opacity: 1;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .timeline ul li div {
+        width: 40vw;
+    }
+    .timeline ul li:nth-child(even) div {
+        left: -44vw;
+    }
+}
+
 #blogs {
     display: flex;
     flex-direction: column;
@@ -334,4 +391,10 @@ blockquote {
 
 blockquote p {
     display: inline;
+}
+
+@media screen and (max-width: 600px) {
+    .blog {
+        width: 90%;
+    }
 }
