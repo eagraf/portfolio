@@ -111,9 +111,9 @@ a i {
 /* Mobile friendly */
 @media screen and (max-width: 600px) {
     #drawer {
-        height: 0;
+        height: 45%;
         width: 100%;
-        bottom: 0px;
+        bottom: -45%;
     }
     .location:first-child {
         margin-top: 32px;
@@ -122,10 +122,16 @@ a i {
 @media screen and (min-width: 600px) {
     #drawer {
         height: 100%;
-        width: 0;
+        width: 45%;
         padding-top: 56px;
         top: 0;
-        right: 0;
+        right: -45%;
+    }
+}
+@media screen and (min-width: 1000px) {
+    #drawer {
+        width: 30%;
+        right: -30%;
     }
 }
 

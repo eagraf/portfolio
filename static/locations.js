@@ -4,7 +4,7 @@ var geoLoaded = false;
 var geoData;
 
 // On load show introduction modal slide.
-$(window).on('load', () => {
+$(window).on('DOMContentLoaded', () => {
     $('#profile-modal').modal('show');
 });
 
@@ -65,19 +65,13 @@ function initMap() {
 
 // Open the right side nav drawer.
 function openDrawer(currentLocation = 0) {
-    console.log(screen.width);
     const drawer = document.getElementById('drawer');
     if (screen.width < 600) {
-        drawer.style.height = '45%';
-        drawer.style.width = '100%';
+        drawer.style.bottom = '0px';
         drawer.style.paddingLeft = '16px';
         drawer.style.paddingRight = '16px';
-    } else if (screen.width < 1000) {
-        drawer.style.width = '45%';
-        drawer.style.paddingLeft = '32px';
-        drawer.style.paddingRight = '16px';
     } else {
-        drawer.style.width = '30%';
+        drawer.style.right = '0px';
         drawer.style.paddingLeft = '32px';
         drawer.style.paddingRight = '16px';
     }
